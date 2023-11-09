@@ -1,16 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Blue from './components/Blue'
+import Red from './components/Red'
+import Home from './components/Home'
+import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
       <div id="container">
-        <h1>Hello React Router!</h1>
-        <div id="navbar">{/* navigation here */}</div>
-        <div id="main-section">{/* routes here */}</div>
+        <div id="navbar">
+          <Link to={'/'}>HOME</Link>
+          <Link to={'/blue'}>BLUE</Link>
+          <Link to={'/red'}>RED</Link>
+        </div>
+
+        <div id="main-section">
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/blue' element={<Blue />}></Route>
+            <Route path='/red' element={<Red />}></Route>
+          </Routes>
+        </div>
+
       </div>
     </>
   )
