@@ -2,18 +2,16 @@ import './App.css'
 import Blue from './components/Blue'
 import Red from './components/Red'
 import Home from './components/Home'
-import { Routes, Route, Link } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
       <div id="container">
-        <div id="navbar">
-          <Link to={'/'}>HOME</Link>
-          <Link to={'/blue'}>BLUE</Link>
-          <Link to={'/red'}>RED</Link>
-        </div>
+        <NavBar />
 
         <div id="main-section">
           <Routes>
@@ -22,7 +20,7 @@ function App() {
             <Route path='/red' element={<Red />}></Route>
           </Routes>
         </div>
-
+        <Footer />
       </div>
     </>
   )
